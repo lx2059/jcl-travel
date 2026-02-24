@@ -1,6 +1,5 @@
 ---
 title: "Beijing Imperial Capital Tour"
-<p><img src="/images/tours/beijing/cover.jpg" alt="Beijing Imperial Capital Tour" title="Beijing - Imperial Majesty"></p>
 date: 2026-02-14
 description: "Walk in the footsteps of emperors and explore China's ancient capital and the Great Wall"
 categories: ["Historical Tours", "Cultural Experiences"]

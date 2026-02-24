@@ -1,0 +1,67 @@
+backend:
+  name: git-gateway
+  branch: main
+
+local_backend: true
+
+media_folder: "static/images/uploads"
+public_folder: "/images/uploads"
+
+collections:
+  - name: "pages"
+    label: "页面管理"
+    files:
+      - file: "content/_index.md"
+        label: "首页"
+        name: "homepage"
+        fields:
+          - { label: "标题", name: "title", widget: "string" }
+          - { label: "副标题", name: "subtitle", widget: "string" }
+          - { label: "描述", name: "description", widget: "text" }
+          - { label: "Hero 图片", name: "hero_image", widget: "image" }
+          
+      - file: "content/about/_index.md"
+        label: "关于我们"
+        name: "about"
+        fields:
+          - { label: "标题", name: "title", widget: "string" }
+          - { label: "内容", name: "body", widget: "markdown" }
+          - { label: "图片", name: "image", widget: "image", required: false }
+          
+      - file: "content/contact/_index.md"
+        label: "联系我们"
+        name: "contact"
+        fields:
+          - { label: "标题", name: "title", widget: "string" }
+          - { label: "邮箱", name: "email", widget: "string" }
+          - { label: "电话", name: "phone", widget: "string" }
+          - { label: "微信", name: "wechat", widget: "string" }
+          - { label: "内容", name: "body", widget: "markdown" }
+
+  - name: "tours"
+    label: "旅游线路"
+    folder: "content/tours"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "标题", name: "title", widget: "string" }
+      - { label: "描述", name: "description", widget: "text" }
+      - { label: "封面图片", name: "image", widget: "image" }
+      - { label: "价格", name: "price", widget: "number" }
+      - { label: "原价", name: "original_price", widget: "number", required: false }
+      - { label: "天数", name: "days", widget: "number" }
+      - { label: "内容", name: "body", widget: "markdown" }
+      - { label: "亮点", name: "highlights", widget: "list", required: false }
+      - { label: "包含项目", name: "includes", widget: "list", required: false }
+      - { label: "不包含项目", name: "excludes", widget: "list", required: false }
+
+  - name: "destinations"
+    label: "目的地"
+    folder: "content/destinations"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "标题", name: "title", widget: "string" }
+      - { label: "描述", name: "description", widget: "text" }
+      - { label: "封面图片", name: "image", widget: "image" }
+      - { label: "内容", name: "body", widget: "markdown" }

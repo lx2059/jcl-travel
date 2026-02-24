@@ -1,6 +1,5 @@
 ---
 title: "Chongqing & Yangtze River Gateway"
-<p><img src="/images/tours/chongqing/cover.jpg" alt="Chongqing & Yangtze River Gateway" title="Chongqing - Mountain City"></p>
 date: 2026-02-14
 description: "Explore the mountain city and gateway to the stunning Three Gorges"
 categories: ["River Cruises", "Urban Experiences"]
