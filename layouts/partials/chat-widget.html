@@ -1,0 +1,138 @@
+{{/* Tawk.to Live Chat Widget - Free Version */}}
+{{/* Instructions: 
+1. Go to https://tawk.to/ and sign up for free
+2. Get your widget code from the dashboard
+3. Replace the script below with your actual Tawk.to code
+4. Customize the widget appearance in Tawk.to dashboard
+*/}}
+
+<!-- Tawk.to Script (Example - Replace with your actual code) -->
+<!--
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/YOUR_WIDGET_ID/default';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+-->
+
+<!-- Demo Chat Button (Remove when real chat is installed) -->
+<div id="demoChatWidget" style="position: fixed; bottom: 20px; right: 20px; z-index: 1000;">
+  <button onclick="openDemoChat()" style="background-color: var(--primary-color); color: white; border: none; border-radius: 50px; padding: 15px 25px; font-size: 16px; font-weight: 600; cursor: pointer; box-shadow: 0 4px 12px rgba(0,0,0,0.15); display: flex; align-items: center; gap: 10px;">
+    <span>💬</span>
+    <span>Chat with Us</span>
+  </button>
+  
+  <div id="demoChatWindow" style="display: none; position: fixed; bottom: 80px; right: 20px; width: 350px; height: 500px; background: white; border-radius: 10px; box-shadow: 0 5px 25px rgba(0,0,0,0.2); overflow: hidden; z-index: 1001;">
+    <div style="background: var(--primary-color); color: white; padding: 15px; display: flex; justify-content: space-between; align-items: center;">
+      <div>
+        <strong>JCL Travel Support</strong>
+        <div style="font-size: 12px; opacity: 0.8;">We're here to help!</div>
+      </div>
+      <button onclick="closeDemoChat()" style="background: none; border: none; color: white; font-size: 20px; cursor: pointer;">×</button>
+    </div>
+    
+    <div id="demoChatMessages" style="height: 350px; padding: 15px; overflow-y: auto; background: #f8f9fa;">
+      <div style="background: white; padding: 10px 15px; border-radius: 10px; margin-bottom: 10px; max-width: 80%;">
+        <strong>JCL Travel:</strong> Hello! 👋 How can I help you with your China travel plans today?
+      </div>
+    </div>
+    
+    <div style="padding: 15px; border-top: 1px solid #eee;">
+      <div style="font-size: 12px; color: #666; margin-bottom: 10px;">
+        <strong>Demo Chat Instructions:</strong> This is a demo chat widget. For real chat functionality:
+        <ol style="margin: 5px 0 0 15px; padding: 0;">
+          <li>Sign up at <a href="https://tawk.to/" target="_blank">tawk.to</a> (free)</li>
+          <li>Get your widget code</li>
+          <li>Replace the script in chat-widget.html</li>
+          <li>I can help monitor and respond to chats!</li>
+        </ol>
+      </div>
+      <div style="display: flex; gap: 10px;">
+        <input type="text" id="demoChatInput" placeholder="Type your message..." style="flex: 1; padding: 10px; border: 1px solid #ddd; border-radius: 5px;" disabled>
+        <button onclick="sendDemoMessage()" style="background: var(--primary-color); color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer;" disabled>Send</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+function openDemoChat() {
+  document.getElementById('demoChatWindow').style.display = 'block';
+}
+
+function closeDemoChat() {
+  document.getElementById('demoChatWindow').style.display = 'none';
+}
+
+function sendDemoMessage() {
+  const input = document.getElementById('demoChatInput');
+  const message = input.value.trim();
+  if (message) {
+    const messagesDiv = document.getElementById('demoChatMessages');
+    const userMsg = document.createElement('div');
+    userMsg.style.cssText = 'background: var(--primary-color); color: white; padding: 10px 15px; border-radius: 10px; margin-bottom: 10px; max-width: 80%; margin-left: auto;';
+    userMsg.innerHTML = `<strong>You:</strong> ${message}`;
+    messagesDiv.appendChild(userMsg);
+    
+    input.value = '';
+    messagesDiv.scrollTop = messagesDiv.scrollHeight;
+    
+    // Auto-reply after 1 second
+    setTimeout(() => {
+      const autoReplies = [
+        "Thanks for your message! In a real chat, I'd be able to help you with tour information, pricing, and booking details.",
+        "For immediate assistance, please contact Crystal at +86 189 1613 4567 or crystal.ji@jcl-travel.com",
+        "I can help answer questions about our China tours, visa requirements, and travel planning.",
+        "Check out our tour packages at /tours/ for detailed itineraries and pricing."
+      ];
+      const reply = autoReplies[Math.floor(Math.random() * autoReplies.length)];
+      
+      const botMsg = document.createElement('div');
+      botMsg.style.cssText = 'background: white; padding: 10px 15px; border-radius: 10px; margin-bottom: 10px; max-width: 80%;';
+      botMsg.innerHTML = `<strong>JCL Travel:</strong> ${reply}`;
+      messagesDiv.appendChild(botMsg);
+      messagesDiv.scrollTop = messagesDiv.scrollHeight;
+    }, 1000);
+  }
+}
+
+// Close chat when clicking outside
+document.addEventListener('click', function(event) {
+  const chatWindow = document.getElementById('demoChatWindow');
+  const chatButton = document.getElementById('demoChatWidget').querySelector('button');
+  if (chatWindow.style.display === 'block' && 
+      !chatWindow.contains(event.target) && 
+      !chatButton.contains(event.target)) {
+    closeDemoChat();
+  }
+});
+</script>
+
+<style>
+#demoChatWindow {
+  transition: all 0.3s ease;
+}
+
+#demoChatMessages::-webkit-scrollbar {
+  width: 6px;
+}
+
+#demoChatMessages::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+#demoChatMessages::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 3px;
+}
+
+#demoChatMessages::-webkit-scrollbar-thumb:hover {
+  background: #aaa;
+}
+</style>

@@ -1,0 +1,103 @@
+baseURL = 'https://jcl-travel.com/'
+languageCode = 'en-us'
+title = 'JCL Travel - Discover Authentic China'
+theme = 'mainroad'
+
+[markup.goldmark.renderer]
+  unsafe = true
+
+ignoreLogs = ['warning-goldmark-raw-html']
+
+[params]
+  # Mainroad theme parameters
+  subtitle = "Opening the Door to China for Overseas Colleagues"
+  description = "At JCL Travel, we believe travel is about connection. We showcase China's hidden gems, vibrant cities, and timeless traditions through experiences that go beyond the ordinary."
+  keywords = "China tours, travel China, Chinese culture, Silk Road, Great Wall, Tibet tours, luxury travel"
+  
+  # Contact information
+  email = "crystal.ji@jcl-travel.com"
+  phone = "+86 189 1613 4567"
+  contactPerson = "Crystal Ji"
+  
+  # Social media
+  github = ""
+  gitlab = ""
+  twitter = ""
+  instagram = ""
+  facebook = ""
+  linkedin = ""
+  telegram = ""
+  
+  # Appearance
+  # logo = "/images/logo.png"  # Commented out until we have actual logo
+  favicon = "/favicon.ico"
+  defaultTheme = "light"
+  disableThemeToggle = false
+  
+  # Features
+  showShareButtons = true
+  showReadingTime = true
+  showRelatedPosts = true
+  showAuthor = false
+  showPagination = true
+  
+  # Comments
+  disqusShortname = ""
+  
+  # Analytics
+  googleAnalytics = ""
+  
+  # Custom CSS/JS
+  customCSS = ["css/custom.css"]
+  customJS = []
+
+[languages]
+  [languages.en]
+    languageName = "English"
+    weight = 1
+    [languages.en.params]
+      linkedin = ""
+      github = ""
+      gitlab = ""
+      twitter = ""
+      instagram = ""
+      facebook = ""
+      telegram = ""
+      mastodon = ""
+      
+[menu]
+  [[menu.main]]
+    identifier = "home"
+    name = "Home"
+    url = "/"
+    weight = 1
+    
+  [[menu.main]]
+    identifier = "tours"
+    name = "Tour Packages"
+    url = "/tours/"
+    weight = 2
+    
+  [[menu.main]]
+    identifier = "destinations"
+    name = "Destinations"
+    url = "/destinations/"
+    weight = 3
+    
+  [[menu.main]]
+    identifier = "about"
+    name = "About Us"
+    url = "/about/"
+    weight = 4
+    
+  [[menu.main]]
+    identifier = "contact"
+    name = "Contact"
+    url = "/contact/"
+    weight = 5
+    
+  [[menu.main]]
+    identifier = "blog"
+    name = "Travel Blog"
+    url = "/blog/"
+    weight = 6
