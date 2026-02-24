@@ -1,9 +1,10 @@
 [build]
-  command = "hugo"
+  command = "git submodule update --init --recursive && hugo"
   publish = "public"
 
 [build.environment]
   HUGO_VERSION = "0.121.0"
+  NODE_VERSION = "18"
 
 [[redirects]]
   from = "/admin"
